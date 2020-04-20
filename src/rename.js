@@ -1,10 +1,9 @@
 const fs = require('fs');
 
-const files = fs.readdirSync(__dirname + '/autumn-icons/');
+const files = fs.readdirSync(__dirname + '/images/');
 
-console.log('[');
 files.forEach((file, index) => {
-  console.log(`{name: ${index + 1}, img: 'autumn-icons/${file}'},`);
+  console.log(`import { ReactComponent as ${file} } from './images/${file}';`);
   // fs.rename(
   //   __dirname + '/autumn-icons/' + file,
   //   __dirname + '/autumn-icons/' + `${index + 1}.png`,
@@ -13,4 +12,3 @@ files.forEach((file, index) => {
   //   }
   // );
 });
-console.log(']');
